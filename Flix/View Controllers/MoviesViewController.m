@@ -43,6 +43,10 @@
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     
     [self.indicatorView startAnimating];
+    
+    [self.tableView setSeparatorColor: UIColorFromRGB(0xEA394A)];
+    
+    
 }
 
 -(void)fetchMovies {
@@ -103,7 +107,7 @@
     
     //selection style
     UIView *backgroundView = [[UIView alloc] init];
-    backgroundView.backgroundColor = UIColorFromRGB(0xFF6666);
+    backgroundView.backgroundColor = UIColorFromRGB(0xFFF9DD);
     cell.selectedBackgroundView = backgroundView;
     
     //set alpha for fade in animation
