@@ -276,8 +276,15 @@
                                         <color key="textColor" red="0.91764705879999997" green="0.22352941179999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYq-8P-XK5">
+                                        <rect key="frame" x="11" y="328" width="352" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.91764705879999997" green="0.22352941179999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5f6-T2-UHG">
-                                        <rect key="frame" x="126" y="261" width="123" height="34"/>
+                                        <rect key="frame" x="11" y="264" width="123" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <state key="normal" title="View Trailer &gt; ">
@@ -287,10 +294,10 @@
                                             <segue destination="Kan-Z1-fpq" kind="show" id="6u7-7w-8Rs"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYq-8P-XK5">
-                                        <rect key="frame" x="11" y="328" width="352" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xw-7h-hru">
+                                        <rect key="frame" x="189" y="270" width="170" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" red="0.91764705879999997" green="0.22352941179999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -304,9 +311,11 @@
                     <connections>
                         <outlet property="backdropView" destination="aYL-5e-uYV" id="UYk-0x-jmI"/>
                         <outlet property="posterView" destination="iTl-G7-Iqv" id="E5B-mi-qB9"/>
+                        <outlet property="ratingLabel" destination="9xw-7h-hru" id="5CB-aH-elq"/>
                         <outlet property="scrollView" destination="igQ-ev-chA" id="CHC-fg-HF3"/>
                         <outlet property="synopsisLabel" destination="oYq-8P-XK5" id="AQ9-5n-aQf"/>
                         <outlet property="titleLabel" destination="Ou3-Wp-0RB" id="QoQ-ia-sBU"/>
+                        <outlet property="trailerLabel" destination="5f6-T2-UHG" id="xiE-qb-wfH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLB-1I-cn7" userLabel="First Responder" sceneMemberID="firstResponder"/>

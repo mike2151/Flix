@@ -10,16 +10,23 @@
 #import "UIImageView+AFNetworking.h"
 #import "TrailerViewController.h"
 
+//macro from https://stackoverflow.com/questions/1560081/how-can-i-create-a-uicolor-from-a-hex-string
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *backdropView;
 @property (weak, nonatomic) IBOutlet UIImageView *posterView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
+@property (weak, nonatomic) IBOutlet UIButton *trailerLabel;
 
 @end
 
 @implementation DetailsViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -77,6 +84,7 @@
     
     self.titleLabel.text = self.movie[@"title"];
     self.synopsisLabel.text  = self.movie[@"overview"];
+    self.ratingLabel.text = [NSString stringWithFormat:@"%@%@%@", @"Rating:   ", self.movie[@"vote_average"], @" / 10.0"];
     
     [self.titleLabel sizeToFit];
     [self.synopsisLabel sizeToFit];
@@ -86,6 +94,7 @@
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, maxHeight);
     
      self.navigationItem.title=self.movie[@"title"];
+    
 
 }
 
