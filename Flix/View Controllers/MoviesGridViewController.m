@@ -9,6 +9,7 @@
 #import "MoviesGridViewController.h"
 #import "MovieCollectionCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "DetailsViewController.h"
 
 @interface MoviesGridViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -43,12 +44,24 @@
 
 -(void)fetchMovies {
     //get from url
-    NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"];
+    NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/297762/similar?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error != nil) {
-            NSLog(@"%@", [error localizedDescription]);
+            NSString *errorMSG = [error localizedDescription];
+            //check for no internet connection
+            if (!([errorMSG rangeOfString:@"Internet"].location == NSNotFound)) {
+                // create an alert notifiying the user that they are not connected to internet
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Cannot Get Movies"
+                                                                               message:@"The internet connection appears to be offline"
+                                                                        preferredStyle:(UIAlertControllerStyleAlert)];
+                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                   style:UIAlertActionStyleDefault
+                                                                 handler:^(UIAlertAction * _Nonnull action) {}];
+                [alert addAction:okAction];
+                [self presentViewController:alert animated:YES completion:^{}];
+            }
         }
         else {
             NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
@@ -62,17 +75,6 @@
     }];
     [task resume];
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -95,5 +97,20 @@
 
     
 }
+
+
+ #pragma mark - Navigation
+
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+     NSIndexPath *indexPath = [self.collectionView indexPathForCell:sender];
+     NSDictionary *movie = self.movies[indexPath.row];
+     
+     //name of the other class
+     DetailsViewController *detailsViewController = [segue destinationViewController];
+     detailsViewController.movie = movie;
+ }
+
 
 @end

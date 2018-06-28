@@ -48,15 +48,26 @@
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error != nil) {
-            NSLog(@"%@", [error localizedDescription]);
+            NSString *errorMSG = [error localizedDescription];
+            //check for no internet connection
+            if (!([errorMSG rangeOfString:@"Internet"].location == NSNotFound)) {
+                // create an alert notifiying the user that they are not connected to internet
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Cannot Get Movies"
+                                                                               message:@"The internet connection appears to be offline"
+                                                                        preferredStyle:(UIAlertControllerStyleAlert)];
+                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                   style:UIAlertActionStyleDefault
+                                                                 handler:^(UIAlertAction * _Nonnull action) {}];
+                [alert addAction:okAction];
+                [self presentViewController:alert animated:YES completion:^{}];
+            }
         }
         else {
             NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        
             
-            
-            // TODO: Store the movies in a property to use elsewhere
-            // TODO: Reload your table view data
             self.movies = dataDictionary[@"results"];
+            
             [self.tableView reloadData];
             [self.indicatorView stopAnimating];
             
