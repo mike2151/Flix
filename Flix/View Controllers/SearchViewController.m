@@ -49,6 +49,7 @@
         NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
         NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
         [cell.posterView setImageWithURL:posterURL];
+
         
         return cell;
     }

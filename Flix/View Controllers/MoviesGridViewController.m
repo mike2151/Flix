@@ -87,11 +87,16 @@
     
     NSDictionary *movie = self.movies[indexPath.item];
     
+    cell.posterView.alpha = 0.0;
+    
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = movie[@"poster_path"];
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
     [cell.posterView setImageWithURL:posterURL];
+    [UIView animateWithDuration:0.3 animations:^{
+        cell.posterView.alpha = 1.0;
+    }];
     
     return cell;
 

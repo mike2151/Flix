@@ -11,6 +11,10 @@
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
 
+//macro from https://stackoverflow.com/questions/1560081/how-can-i-create-a-uicolor-from-a-hex-string
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+
 @interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray *movies;
@@ -97,12 +101,23 @@
     cell.titleLabel.text = self.movies[indexPath.row][@"title"];
     cell.synopsisLabel.text = self.movies[indexPath.row][@"overview"];
     
+    //selection style
+    UIView *backgroundView = [[UIView alloc] init];
+    backgroundView.backgroundColor = UIColorFromRGB(0xFF6666);
+    cell.selectedBackgroundView = backgroundView;
+    
+    //set alpha for fade in animation
+    cell.posterView.alpha = 0.0;
+    
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = self.movies[indexPath.row][@"poster_path"];
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
     [cell.posterView setImageWithURL:posterURL];
+    [UIView animateWithDuration:0.3 animations:^{
+        cell.posterView.alpha = 1.0;
+    }];
     
     return cell;
 }
