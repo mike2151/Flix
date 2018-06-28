@@ -45,11 +45,16 @@
     NSDictionary *movie = self.movies[indexPath.item];
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = movie[@"poster_path"];
-    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
-    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
-    [cell.posterView setImageWithURL:posterURL];
-    
-    return cell;
+    if (posterURLString != (NSString *)[NSNull null]) {
+        NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
+        NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
+        [cell.posterView setImageWithURL:posterURL];
+        
+        return cell;
+    }
+    else {
+        return cell;
+    }
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
