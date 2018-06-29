@@ -8,31 +8,31 @@ Time spent: **X** hours spent in total
 
 The following **12** functionality is complete:
 
-- [ X] User can view a list of movies currently playing in theaters from The Movie Database.
-- [ X] Poster images are loaded using the UIImageView category in the AFNetworking library.
-- [ ]X User sees a loading state while waiting for the movies API.
-- [ X] User can pull to refresh the movie list.
+- [X] User can view a list of movies currently playing in theaters from The Movie Database.
+- [X] Poster images are loaded using the UIImageView category in the AFNetworking library.
+- [X] User sees a loading state while waiting for the movies API.
+- [X] User can pull to refresh the movie list.
 
 The following **optional** features are implemented:
 
-- [ X] User sees an error message when there's a networking error.
-- [ X] Movies are displayed using a CollectionView instead of a TableView.
-- [ X] User can search for a movie.
-- [ X] All images fade in as they are loading.
-- [ X] User can view the large movie poster by tapping on a cell.
-- [ X] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
-- [ X] Customize the selection effect of the cell.
-- [ X] Customize the navigation bar.
-- [ X] Customize the UI.
+- [X] User sees an error message when there's a networking error.
+- [X] Movies are displayed using a CollectionView instead of a TableView.
+- [X] User can search for a movie.
+- [X] All images fade in as they are loading.
+- [X] User can view the large movie poster by tapping on a cell.
+- [X] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
+- [X] Customize the selection effect of the cell.
+- [X] Customize the navigation bar.
+- [X] Customize the UI.
 
 The following **additional** features are implemented:
 
-- [ X] Comments section for each movie consisting of reviews
-- [ X] Ability to set and view favorite movies
-- [ X] Rating and release date information listed for each movie
-- [ X] User can search the entire movie database via the search endpoint
-- [ X] Ability to search based on ratings and popularity
-- [ X] View trailer for each movie
+- [X] Comments section for each movie consisting of reviews
+- [X] Ability to set and view favorite movies
+- [X] Rating and release date information listed for each movie
+- [X] User can search the entire movie database via the search endpoint
+- [X] Ability to search based on ratings and popularity
+- [X] View trailer for each movie
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
