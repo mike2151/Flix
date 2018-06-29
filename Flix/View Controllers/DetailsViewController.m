@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (weak, nonatomic) IBOutlet UIButton *trailerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *date;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
 
 
 @end
@@ -93,6 +94,21 @@
     self.ratingLabel.text = [NSString stringWithFormat:@"%@%@%@", @"Rating:   ", self.movie[@"vote_average"], @" / 10.0"];
     self.date.text = [NSString stringWithFormat:@"%@%@", @"Released: ", self.movie[@"release_date"]];
     
+    //set button text depending if movie is in favorites
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSArray *favorites = [userDefaults objectForKey:@"favoriteMovies"];
+    BOOL contains = NO;
+    for (NSDictionary *movie in favorites) {
+        if (movie[@"id"] == self.movie[@"id"]) {
+            contains = YES;
+            break;
+        }
+    }
+    if (contains) {
+        [self.favoriteButton setTitle:@"Unfavorite Movie" forState:UIControlStateNormal];
+    }
+    
+    
     
     [self.titleLabel sizeToFit];
     [self.synopsisLabel sizeToFit];
@@ -106,9 +122,42 @@
 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+//pressing the favorite movie button 
+- (IBAction)favoriteMovieTap:(id)sender {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSArray *favorites = [userDefaults objectForKey:@"favoriteMovies"];
+    NSDictionary *movie = self.movie;
+    BOOL contains = NO;
+    for (NSDictionary *movie in favorites) {
+        if (movie[@"id"] == self.movie[@"id"]) {
+            contains = YES;
+            break;
+        }
+    }
+    if (contains) {
+        //remove from array
+        NSMutableArray * tempArray = [favorites mutableCopy];
+        [tempArray removeObject:movie];
+        favorites = [tempArray copy];
+        //commit data
+        [userDefaults setObject:favorites forKey:@"favoriteMovies"];
+        [userDefaults synchronize];
+        [self.favoriteButton setTitle:@"Favorite Movie" forState:UIControlStateNormal];
+    }
+    else {
+        //add entry
+        NSMutableArray * tempArray = [favorites mutableCopy];
+        if (tempArray == nil) {
+            tempArray = [[NSMutableArray alloc] init];
+        }
+        [tempArray addObject:movie];
+        favorites = [tempArray copy];
+        //commit to mem
+        [userDefaults setObject:favorites forKey:@"favoriteMovies"];
+        [userDefaults synchronize];
+        [self.favoriteButton setTitle:@"Unfavorite Movie" forState:UIControlStateNormal];
+    }
+    NSLog(@"%@", favorites);
 }
 
 

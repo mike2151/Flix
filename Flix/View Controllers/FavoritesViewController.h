@@ -1,0 +1,13 @@
+//
+//  FavoritesViewController.h
+//  Flix
+//
+//  Created by Michael Abelar on 6/29/18.
+//  Copyright © 2018 Michael Abelar. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface FavoritesViewController : UIViewController
+
+@end
