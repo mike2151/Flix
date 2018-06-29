@@ -39,6 +39,13 @@
     [self.collectionView reloadData];
     
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    self.movies = [userDefaults objectForKey:@"favoriteMovies"];
+    [self.collectionView reloadData];
+}
+
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.movies.count;
