@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.filters = @[@"No Filter", @"Rating", @"Popularity", @"Latest Released"];
+    self.filters = @[@"No Filter", @"Rating", @"Popularity"];
     
     self.picker.dataSource = self;
     self.picker.delegate = self;

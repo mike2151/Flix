@@ -76,6 +76,10 @@
 //search bar functions
 
 -(void)searchMovies:(NSString*) urlString {
+    //get filter
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    double filter = [defaults doubleForKey:@"filterOption"];
+    
     //get from url
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
@@ -99,11 +103,27 @@
         else {
             NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             self.movies = dataDictionary[@"results"];
+            [self sortMovies:filter];
+            
             [self.collectionView reloadData];
         }
         
     }];
     [task resume];
+}
+
+-(void)sortMovies:(double)option {
+    if (option == 1) {
+        NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"vote_average" ascending:NO];
+        NSArray *temp = [self.movies sortedArrayUsingDescriptors:@[descriptor]];
+        self.movies = [temp copy];
+    }
+    else if (option == 2) {
+        NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"popularity" ascending:NO];
+        NSArray *temp = [self.movies sortedArrayUsingDescriptors:@[descriptor]];
+        self.movies = [temp copy];
+    }
+    
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
