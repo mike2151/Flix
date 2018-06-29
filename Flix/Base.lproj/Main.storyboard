@@ -259,7 +259,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aYL-5e-uYV">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="movie" translatesAutoresizingMaskIntoConstraints="NO" id="aYL-5e-uYV">
                                         <rect key="frame" x="0.0" y="-1" width="375" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.10980392160000001" green="0.098039215690000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
@@ -277,17 +277,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYq-8P-XK5">
-                                        <rect key="frame" x="11" y="328" width="352" height="22"/>
+                                        <rect key="frame" x="8" y="361" width="352" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.91764705879999997" green="0.22352941179999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5f6-T2-UHG">
-                                        <rect key="frame" x="11" y="264" width="123" height="34"/>
+                                        <rect key="frame" x="7" y="264" width="131" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <state key="normal" title="View Trailer &gt; ">
+                                        <state key="normal" title="View Trailer -&gt; ">
                                             <color key="titleColor" red="0.91764705879999997" green="0.22352941179999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -295,12 +295,30 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xw-7h-hru">
-                                        <rect key="frame" x="189" y="270" width="170" height="22"/>
+                                        <rect key="frame" x="6" y="320" width="170" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" red="0.91764705879999997" green="0.22352941179999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Release Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hzu-Py-c9y">
+                                        <rect key="frame" x="169" y="320" width="194" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.91764705879999997" green="0.22352941179999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peI-fc-GeI">
+                                        <rect key="frame" x="201" y="264" width="143" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="View Reviews -&gt;">
+                                            <color key="titleColor" red="0.91764705879999997" green="0.22352941179999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="gjA-Qs-QgV" kind="show" id="qMh-Gb-GER"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.098039215690000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
@@ -310,6 +328,7 @@
                     </view>
                     <connections>
                         <outlet property="backdropView" destination="aYL-5e-uYV" id="UYk-0x-jmI"/>
+                        <outlet property="date" destination="Hzu-Py-c9y" id="lX6-ip-Buh"/>
                         <outlet property="posterView" destination="iTl-G7-Iqv" id="E5B-mi-qB9"/>
                         <outlet property="ratingLabel" destination="9xw-7h-hru" id="5CB-aH-elq"/>
                         <outlet property="scrollView" destination="igQ-ev-chA" id="CHC-fg-HF3"/>
@@ -321,6 +340,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLB-1I-cn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2005.5999999999999" y="637.33133433283365"/>
+        </scene>
+        <!--Reviews View Controller-->
+        <scene sceneID="cKx-7Y-Yeh">
+            <objects>
+                <viewController id="gjA-Qs-QgV" customClass="ReviewsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ukB-7d-UcZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIQ-Mw-sOa">
+                                <rect key="frame" x="142" y="82" width="98" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" red="0.91764705879999997" green="0.22352941179999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="161" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J35-pa-XmM">
+                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.098039215690000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="161" id="Xsg-dJ-bxG" customClass="ReviewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="161"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xsg-dJ-bxG" id="16o-K2-C0s">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="160.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dA3-ag-BXU">
+                                                    <rect key="frame" x="30" y="11" width="330" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.91764705879999997" green="0.22352941179999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRa-r3-FaH">
+                                                    <rect key="frame" x="30" y="40" width="330" height="105"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.91764705879999997" green="0.22352941179999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.10980392160000001" green="0.098039215690000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="authorLabel" destination="dA3-ag-BXU" id="Kkz-f7-ze2"/>
+                                            <outlet property="descriptionLabel" destination="yRa-r3-FaH" id="2Ci-yd-by8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.10980392160000001" green="0.098039215690000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="bA3-y9-WyC"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="J35-pa-XmM" id="LIA-bD-eUW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7iy-Bb-HGe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2893.5999999999999" y="1146.4767616191905"/>
         </scene>
         <!--Trailer View Controller-->
         <scene sceneID="evt-dB-6VJ">
@@ -345,7 +427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r1l-QV-RD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2872.8000000000002" y="643.62818590704649"/>
+            <point key="canvasLocation" x="2918" y="349"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="tdP-GF-P7Q">
@@ -407,6 +489,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="movie" width="360" height="352"/>
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="projector_tabbar_item" width="21" height="25"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>

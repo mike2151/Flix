@@ -9,6 +9,7 @@
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "TrailerViewController.h"
+#import "ReviewsViewController.h"
 
 //macro from https://stackoverflow.com/questions/1560081/how-can-i-create-a-uicolor-from-a-hex-string
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
@@ -21,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (weak, nonatomic) IBOutlet UIButton *trailerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *date;
+
 
 @end
 
@@ -82,9 +85,14 @@
        failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {}];
     }
     
+    NSLog(@"%@", self.movie[@"runtime"]);
+    
+    
     self.titleLabel.text = self.movie[@"title"];
     self.synopsisLabel.text  = self.movie[@"overview"];
     self.ratingLabel.text = [NSString stringWithFormat:@"%@%@%@", @"Rating:   ", self.movie[@"vote_average"], @" / 10.0"];
+    self.date.text = [NSString stringWithFormat:@"%@%@", @"Released: ", self.movie[@"release_date"]];
+    
     
     [self.titleLabel sizeToFit];
     [self.synopsisLabel sizeToFit];
@@ -112,6 +120,9 @@
     
     TrailerViewController *trailerViewController = [segue destinationViewController];
     trailerViewController.movieID = self.movie[@"id"];
+    
+    ReviewsViewController *reviewsViewController = [segue destinationViewController];
+    reviewsViewController.movieID = self.movie[@"id"];
 }
 
 
