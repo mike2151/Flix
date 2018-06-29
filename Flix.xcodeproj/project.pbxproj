@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5367A1FA20E5AC5900EFA330 /* ReviewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5367A1F920E5AC5900EFA330 /* ReviewsViewController.m */; };
 		5367A1FD20E5AD6F00EFA330 /* ReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5367A1FC20E5AD6F00EFA330 /* ReviewCell.m */; };
+		5367A20320E5CB6500EFA330 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5367A20220E5CB6500EFA330 /* SettingsViewController.m */; };
 		536EBE3F20E5562A00E6327C /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 536EBE3E20E5562A00E6327C /* SearchViewController.m */; };
 		536EBE4220E5631200E6327C /* TrailerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 536EBE4120E5631200E6327C /* TrailerViewController.m */; };
 		537CC78720E44BD100632882 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 537CC78620E44BD100632882 /* DetailsViewController.m */; };
@@ -54,6 +55,8 @@
 		5367A1F920E5AC5900EFA330 /* ReviewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewsViewController.m; sourceTree = "<group>"; };
 		5367A1FB20E5AD6F00EFA330 /* ReviewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReviewCell.h; sourceTree = "<group>"; };
 		5367A1FC20E5AD6F00EFA330 /* ReviewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewCell.m; sourceTree = "<group>"; };
+		5367A20120E5CB6500EFA330 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		5367A20220E5CB6500EFA330 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		536EBE3D20E5562A00E6327C /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		536EBE3E20E5562A00E6327C /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		536EBE4020E5631200E6327C /* TrailerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailerViewController.h; sourceTree = "<group>"; };
@@ -198,6 +201,8 @@
 				536EBE4120E5631200E6327C /* TrailerViewController.m */,
 				5367A1F820E5AC5900EFA330 /* ReviewsViewController.h */,
 				5367A1F920E5AC5900EFA330 /* ReviewsViewController.m */,
+				5367A20120E5CB6500EFA330 /* SettingsViewController.h */,
+				5367A20220E5CB6500EFA330 /* SettingsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -421,6 +426,7 @@
 				5392374B20E3DE4A00D3E65B /* main.m in Sources */,
 				537CC78720E44BD100632882 /* DetailsViewController.m in Sources */,
 				5392373D20E3DE4900D3E65B /* AppDelegate.m in Sources */,
+				5367A20320E5CB6500EFA330 /* SettingsViewController.m in Sources */,
 				537CC78D20E4623F00632882 /* MovieCollectionCell.m in Sources */,
 				5392377420E4151F00D3E65B /* MovieCell.m in Sources */,
 				5392376F20E40B7500D3E65B /* MoviesViewController.m in Sources */,

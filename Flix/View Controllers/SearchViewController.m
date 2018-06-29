@@ -130,12 +130,14 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSIndexPath *indexPath = [self.collectionView indexPathForCell:sender];
-    NSDictionary *movie = self.movies[indexPath.row];
-    
-    //name of the other class
-    DetailsViewController *detailsViewController = [segue destinationViewController];
-    detailsViewController.movie = movie;
+    if(!([sender isKindOfClass:[UIBarButtonItem class]])) {
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:sender];
+        NSDictionary *movie = self.movies[indexPath.row];
+        
+        //name of the other class
+        DetailsViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.movie = movie;
+    }
 }
 
 

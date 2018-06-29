@@ -79,7 +79,6 @@
     ReviewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReviewCell"];
     cell.authorLabel.text = [NSString stringWithFormat:@"%@%@", @"Author: ", self.reviews[indexPath.row][@"author"]];
     cell.descriptionLabel.text = self.reviews[indexPath.row][@"content"];
-    
     return cell;
 }
 
